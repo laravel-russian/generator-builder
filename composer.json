@@ -34,11 +34,5 @@
         "\\LaravelRrussian\\GeneratorBuilder\\GeneratorBuilderServiceProvider"
       ]
     }
-  },
-  "funding": [
-    {
-      "type": "opencollective",
-      "url": "https://opencollective.com/infyomlabs"
-    }
-  ]
+  }
 }
