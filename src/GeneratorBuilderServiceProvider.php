@@ -1,9 +1,9 @@
 <?php
 
-namespace InfyOm\GeneratorBuilder;
+namespace LaravelRrussian\GeneratorBuilder;
 
 use Illuminate\Support\ServiceProvider;
-use InfyOm\GeneratorBuilder\Commands\GeneratorBuilderRoutesPublisherCommand;
+use LaravelRrussian\GeneratorBuilder\Commands\GeneratorBuilderRoutesPublisherCommand;
 
 class GeneratorBuilderServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class GeneratorBuilderServiceProvider extends ServiceProvider
         $configPath = __DIR__.'/../config/generator_builder.php';
 
         $this->publishes([
-            $configPath => config_path('infyom/generator_builder.php'),
+            $configPath => config_path('laravel-russian/generator_builder.php'),
         ]);
 
         $this->loadViewsFrom(__DIR__.'/../views/', 'generator-builder');
@@ -30,12 +30,12 @@ class GeneratorBuilderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('infyom.publish.generator-builder', function ($app) {
+        $this->app->singleton('laravel-russian.publish.generator-builder', function ($app) {
             return new GeneratorBuilderRoutesPublisherCommand();
         });
 
         $this->commands([
-            'infyom.publish.generator-builder',
+            'laravel-russian.publish.generator-builder',
         ]);
     }
 }

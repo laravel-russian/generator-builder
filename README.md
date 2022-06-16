@@ -1,11 +1,10 @@
-<h1 align="center"><img src="https://assets.infyom.com/open-source/infyom-logo.png" alt="InfyOm"></h1>
+<h1 align="center"><img src="https://assets.laravel-russian.com/open-source/laravel-russian-logo.png" alt="LaravelRrussian"></h1>
 
-InfyOm Laravel Generator GUI Builder
-=====================================
+# LaravelRrussian Laravel Generator GUI Builder
 
 ## Documentation
 
-Read [Documentation](https://infyom.com/open-source/gui-interface/docs) for detailed installation steps and usage.
+Read [Documentation](https://laravel-russian.com/open-source/gui-interface/docs) for detailed installation steps and usage.
 
 ## Support Us
 
@@ -15,7 +14,7 @@ You can support us by either sponsoring us or buying one of our paid products. O
 
 ### Buy our Paid Products
 
-[![InfyVCards-SaaS](https://assets.infyom.com/open-source/new/infyvcards-saas-banner.png)](https://1.envato.market/15gvva)
+[![InfyVCards-SaaS](https://assets.laravel-russian.com/open-source/new/infyvcards-saas-banner.png)](https://1.envato.market/15gvva)
 
 You can also check out our other paid products on [CodeCanyon](https://1.envato.market/BXAnR1).
 
@@ -33,15 +32,15 @@ You can also check out our other paid products on [CodeCanyon](https://1.envato.
 
 ### Follow Us
 
-- [Twitter](https://twitter.com/infyom)
-- [Facebook](https://www.facebook.com/infyom)
-- [LinkedIn](https://in.linkedin.com/company/infyom-technologies)
+- [Twitter](https://twitter.com/laravel-russian)
+- [Facebook](https://www.facebook.com/laravel-russian)
+- [LinkedIn](https://in.linkedin.com/company/laravel-russian-technologies)
 - [Youtube](https://www.youtube.com/channel/UC8IvwfChD6i7Wp4yZp3tNsQ)
-- [Contact Us](https://infyom.com/contact-us)
+- [Contact Us](https://laravel-russian.com/contact-us)
 
-## Made with InfyOm Generator
+## Made with LaravelRrussian Generator
 
-Also, Do not forget to add your website to [Made with InfyOm Generator List](https://github.com/InfyOmLabs/laravel-generator/blob/develop/made-with-generator.md) list.
+Also, Do not forget to add your website to [Made with LaravelRrussian Generator List](https://github.com/InfyOmLabs/laravel-generator/blob/develop/made-with-generator.md) list.
 
 ## Security
 
@@ -49,7 +48,7 @@ If you discover any security-related issues, create an issue using the issue tra
 
 ## Credits
 
-- [InfyOm Technologies](https://github.com/infyomlabs)
+- [LaravelRrussian Technologies](https://github.com/infyomlabs)
 - [All Contributors](../../contributors)
 
 ## License

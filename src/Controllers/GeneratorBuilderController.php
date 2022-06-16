@@ -1,13 +1,13 @@
 <?php
 
-namespace InfyOm\GeneratorBuilder\Controllers;
+namespace LaravelRrussian\GeneratorBuilder\Controllers;
 
 use App\Http\Controllers\Controller;
 use Artisan;
 use File;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
-use InfyOm\GeneratorBuilder\Requests\BuilderGenerateRequest;
+use LaravelRrussian\GeneratorBuilder\Requests\BuilderGenerateRequest;
 use Request;
 use Response;
 
@@ -15,17 +15,17 @@ class GeneratorBuilderController extends Controller
 {
     public function builder()
     {
-        return view(config('infyom.generator_builder.views.builder'));
+        return view(config('laravel-russian.generator_builder.views.builder'));
     }
 
     public function fieldTemplate()
     {
-        return view(config('infyom.generator_builder.views.field-template'));
+        return view(config('laravel-russian.generator_builder.views.field-template'));
     }
 
     public function relationFieldTemplate()
     {
-        return view(config('infyom.generator_builder.views.relation-field-template'));
+        return view(config('laravel-russian.generator_builder.views.relation-field-template'));
     }
 
     public function generate(BuilderGenerateRequest $request)
@@ -70,7 +70,7 @@ class GeneratorBuilderController extends Controller
             $input['--prefix'] = $data['prefix'];
         }
 
-        Artisan::call('infyom:rollback', $input);
+        Artisan::call('laravel-russian:rollback', $input);
 
         return Response::json(['message' => 'Files rollback successfully'], 200);
     }
@@ -172,7 +172,7 @@ class GeneratorBuilderController extends Controller
 
 //    public function availableSchema()
 //    {
-//        $schemaFolder = config('infyom.laravel_generator.path.schema_files', base_path('resources/model_schemas/'));
+//        $schemaFolder = config('laravel-russian.laravel_generator.path.schema_files', base_path('resources/model_schemas/'));
 //
 //        if (!File::exists($schemaFolder)) {
 //            return [];
@@ -193,7 +193,7 @@ class GeneratorBuilderController extends Controller
 //
 //    public function retrieveSchema($schema)
 //    {
-//        $schemaFolder = config('infyom.laravel_generator.path.schema_files', base_path('resources/model_schemas/'));
+//        $schemaFolder = config('laravel-russian.laravel_generator.path.schema_files', base_path('resources/model_schemas/'));
 //
 //        $filePath = $schemaFolder . $schema . ".json";
 //

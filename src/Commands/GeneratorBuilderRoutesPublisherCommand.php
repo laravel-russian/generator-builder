@@ -1,6 +1,6 @@
 <?php
 
-namespace InfyOm\GeneratorBuilder\Commands;
+namespace LaravelRrussian\GeneratorBuilder\Commands;
 
 use File;
 use Illuminate\Console\Command;
@@ -13,7 +13,7 @@ class GeneratorBuilderRoutesPublisherCommand extends Command
      *
      * @var string
      */
-    protected $name = 'infyom.publish:generator-builder';
+    protected $name = 'laravel-russian.publish:generator-builder';
 
     /**
      * The console command description.
@@ -38,7 +38,7 @@ class GeneratorBuilderRoutesPublisherCommand extends Command
 
     private function publishRoutes()
     {
-        $path = config('infyom.laravel_generator.path.routes', app_path('Http/routes.php'));
+        $path = config('laravel-russian.laravel_generator.path.routes', app_path('Http/routes.php'));
 
         $routeContents = file_get_contents($path);
 
@@ -55,7 +55,7 @@ class GeneratorBuilderRoutesPublisherCommand extends Command
     public function publishViews()
     {
         $sourceDir = __DIR__.'/../../views/';
-        $destinationDir = base_path('resources/views/infyom/generator-builder/');
+        $destinationDir = base_path('resources/views/laravel-russian/generator-builder/');
 
         if (file_exists($destinationDir)) {
             $answer = $this->ask('Do you want to overwrite generator-builder? (y|N) :', false);
