@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelRrussian\GeneratorBuilder\Controllers;
+namespace LaravelRussian\GeneratorBuilder\Controllers;
 
 use App\Http\Controllers\Controller;
 use Artisan;
 use File;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
-use LaravelRrussian\GeneratorBuilder\Requests\BuilderGenerateRequest;
+use LaravelRussian\GeneratorBuilder\Requests\BuilderGenerateRequest;
 use Request;
 use Response;
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LaravelRrussian Technologies</title>
+    <title>LaravelRussian Technologies</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -41,7 +41,7 @@
             <div id="info" style="display: none"></div>
             <div class="box box-primary col-lg-12">
                 <div class="box-header" style="margin-top: 10px">
-                    <h1 class="box-title" style="font-size: 30px">LaravelRrussian Laravel Generator Builder</h1>
+                    <h1 class="box-title" style="font-size: 30px">LaravelRussian Laravel Generator Builder</h1>
                 </div>
                 <div class="box-body">
                     <form id="form">
@@ -600,7 +600,7 @@
                     $("#schemaInfo").html("");
                     $("#schemaInfo").append(
                         '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Schema file must be json</strong></div>'
-                        );
+                    );
                     $("#schemaInfo").show();
                     $(this).replaceWith($(this).val('').clone(true));
                     setTimeout(function() {

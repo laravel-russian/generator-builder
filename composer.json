@@ -1,7 +1,7 @@
 {
   "name": "laravel-russian/generator-builder",
   "type": "library",
-  "description": "LaravelRrussian Laravel Generator GUI Builder",
+  "description": "LaravelRussian Laravel Generator GUI Builder",
   "keywords": [
     "laravel",
     "api",
@@ -25,13 +25,13 @@
   },
   "autoload": {
     "psr-4": {
-      "LaravelRrussian\\GeneratorBuilder\\": "src/"
+      "LaravelRussian\\GeneratorBuilder\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "\\LaravelRrussian\\GeneratorBuilder\\GeneratorBuilderServiceProvider"
+        "\\LaravelRussian\\GeneratorBuilder\\GeneratorBuilderServiceProvider"
       ]
     }
   }

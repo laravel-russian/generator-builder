@@ -1,6 +1,6 @@
-<h1 align="center"><img src="https://assets.laravel-russian.com/open-source/laravel-russian-logo.png" alt="LaravelRrussian"></h1>
+<h1 align="center"><img src="https://assets.laravel-russian.com/open-source/laravel-russian-logo.png" alt="LaravelRussian"></h1>
 
-# LaravelRrussian Laravel Generator GUI Builder
+# LaravelRussian Laravel Generator GUI Builder
 
 ## Documentation
 
@@ -38,9 +38,9 @@ You can also check out our other paid products on [CodeCanyon](https://1.envato.
 - [Youtube](https://www.youtube.com/channel/UC8IvwfChD6i7Wp4yZp3tNsQ)
 - [Contact Us](https://laravel-russian.com/contact-us)
 
-## Made with LaravelRrussian Generator
+## Made with LaravelRussian Generator
 
-Also, Do not forget to add your website to [Made with LaravelRrussian Generator List](https://github.com/InfyOmLabs/laravel-generator/blob/develop/made-with-generator.md) list.
+Also, Do not forget to add your website to [Made with LaravelRussian Generator List](https://github.com/InfyOmLabs/laravel-generator/blob/develop/made-with-generator.md) list.
 
 ## Security
 
@@ -48,7 +48,7 @@ If you discover any security-related issues, create an issue using the issue tra
 
 ## Credits
 
-- [LaravelRrussian Technologies](https://github.com/infyomlabs)
+- [LaravelRussian Technologies](https://github.com/infyomlabs)
 - [All Contributors](../../contributors)
 
 ## License

@@ -1,14 +1,14 @@
-Route::get('generator_builder', '\LaravelRrussian\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
+Route::get('generator_builder', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
 
-Route::get('field_template', '\LaravelRrussian\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
+Route::get('field_template', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
 
-Route::get('relation_field_template', '\LaravelRrussian\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
+Route::get('relation_field_template', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
 
-Route::post('generator_builder/generate', '\LaravelRrussian\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
+Route::post('generator_builder/generate', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
 
-Route::post('generator_builder/rollback', '\LaravelRrussian\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
+Route::post('generator_builder/rollback', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
 
 Route::post(
     'generator_builder/generate-from-file',
-    '\LaravelRrussian\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
+    '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');

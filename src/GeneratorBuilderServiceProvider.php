@@ -1,9 +1,9 @@
 <?php
 
-namespace LaravelRrussian\GeneratorBuilder;
+namespace LaravelRussian\GeneratorBuilder;
 
 use Illuminate\Support\ServiceProvider;
-use LaravelRrussian\GeneratorBuilder\Commands\GeneratorBuilderRoutesPublisherCommand;
+use LaravelRussian\GeneratorBuilder\Commands\GeneratorBuilderRoutesPublisherCommand;
 
 class GeneratorBuilderServiceProvider extends ServiceProvider
 {

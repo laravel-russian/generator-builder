@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelRrussian\GeneratorBuilder\Requests;
+namespace LaravelRussian\GeneratorBuilder\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Response;

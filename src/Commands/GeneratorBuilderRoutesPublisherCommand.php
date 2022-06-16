@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelRrussian\GeneratorBuilder\Commands;
+namespace LaravelRussian\GeneratorBuilder\Commands;
 
 use File;
 use Illuminate\Console\Command;
