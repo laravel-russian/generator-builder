@@ -46,8 +46,8 @@
                     <div class="col-md-3">
                         <h3>Tables</h3>
                         <ul>
-                            @foreach (DB::connection()->getDoctrineSchemaManager()->listTableNames()
-    as $db)
+                            {{ $dbs = DB::connection()->getDoctrineSchemaManager()->listTableNames() }}
+                            @foreach ($dbs as $db)
                                 <li>{{ $db }}</li>
                             @endforeach
                         </ul>
@@ -224,7 +224,7 @@
                         </div>
 
                         <div class="table-responsive col-md-12">
-                            <table class="table table-striped table-bordered" id="table">
+                            <table class="table-striped table-bordered table" id="table">
                                 <thead class="no-border">
                                     <tr>
                                         <th>Field Name</th>
@@ -267,7 +267,7 @@
                         </div>
 
                         <div class="table-responsive col-md-12" id="relationShip" style="margin-top:35px;display: none">
-                            <table class="table table-striped table-bordered" id="table">
+                            <table class="table-striped table-bordered table" id="table">
                                 <thead class="no-border">
                                     <tr>
                                         <th>Relation Type</th>
