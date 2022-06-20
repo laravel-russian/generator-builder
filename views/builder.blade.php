@@ -36,7 +36,109 @@
 </style>
 
 <body class="skin-blue" style="background-color: #ecf0f5">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-12">
+        <section class="content">
+            <div class="box box-primary col-lg-12">
+                <div class="box-header" style="margin-top: 10px">
+                    <h1 class="box-title" style="font-size: 30px">Helpers</h1>
+                </div>
+                <div class="box-body">
+                    <div class="col-md-3">
+                        <h3>Tables</h3>
+                        <ul>
+                            @foreach (DB::connection()->getDoctrineSchemaManager()->listTableNames()
+    as $db)
+                                <li>{{ $db }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5">
+
+
+                        <h3>Models</h3>
+                        <ul>
+                            @foreach (glob('../app/Models/*.php') as $filename)
+                                <li>
+
+                                    @if (is_dir($filename))
+                                        Dir: {{ pathinfo($filename)['filename'] }}
+                                    @else
+                                        File: {{ pathinfo($filename)['filename'] }}
+                                    @endif
+
+                                    {{-- {{ var_dump(pathinfo($filename)) }} --}}
+                                </li>
+                            @endforeach
+                        </ul>
+
+                        <h3>DB migrations</h3>
+                        <ul>
+                            @foreach (glob('../database/migrations/*.php') as $filename)
+                                <li>
+                                    @if (is_dir($filename))
+                                        {{-- Dir: {{ pathinfo($filename)['filename'] }} --}}
+                                    @else
+                                        File: {{ pathinfo($filename)['filename'] }}
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+
+                        <h3>Controlers</h3>
+                        <ul>
+                            @foreach (glob('../app/Http/Controllers/*.php') as $filename)
+                                <li>
+                                    {{ pathinfo($filename)['filename'] }}
+                                </li>
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <h3>Layouts</h3>
+                        <ul>
+                            @foreach (glob('../resources/views/layouts/*') as $filename)
+                                <li>
+                                    @if (is_dir($filename))
+                                        Dir: {{ pathinfo($filename)['filename'] }}
+                                    @else
+                                        File: {{ pathinfo($filename)['filename'] }}
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+
+                        <h3>Views dir</h3>
+                        <ul>
+                            @foreach (glob('../resources/views/*') as $filename)
+                                @if (is_dir($filename))
+                                    <li>
+                                        resources/views/{{ pathinfo($filename)['filename'] }}/
+                                    </li>
+                                @else
+                                @endif
+                            @endforeach
+                            @foreach (glob('../resources/views/*') as $filename)
+                                @if (is_dir($filename))
+                                @else
+                                    <li>
+                                        {{ pathinfo($filename)['filename'] }}
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-md-12">
         <section class="content">
             <div id="info" style="display: none"></div>
             <div class="box box-primary col-lg-12">
@@ -49,8 +151,7 @@
 
                         <div class="form-group col-md-4">
                             <label for="txtModelName">Model Name<span class="required">*</span></label>
-                            <input type="text" class="form-control" required id="txtModelName"
-                                placeholder="Enter name">
+                            <input type="text" class="form-control" required id="txtModelName" placeholder="Enter name">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="drdCommandType">Command Type</label>
@@ -62,8 +163,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="txtCustomTblName">Custom Table Name</label>
-                            <input type="text" class="form-control" id="txtCustomTblName"
-                                placeholder="Enter table name">
+                            <input type="text" class="form-control" id="txtCustomTblName" placeholder="Enter table name">
                         </div>
                         <div class="form-group col-md-8">
                             <label for="txtModelName">Options</label>
@@ -71,44 +171,37 @@
                             <div class="form-inline form-group" style="border-color: transparent">
                                 <div class="checkbox chk-align">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkDelete"><span
-                                            class="chk-label-margin"> Soft Delete </span>
+                                        <input type="checkbox" class="flat-red" id="chkDelete"><span class="chk-label-margin"> Soft Delete </span>
                                     </label>
                                 </div>
                                 <div class="checkbox chk-align">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkSave"> <span
-                                            class="chk-label-margin">Save Schema</span>
+                                        <input type="checkbox" class="flat-red" id="chkSave"> <span class="chk-label-margin">Save Schema</span>
                                     </label>
                                 </div>
                                 <div class="checkbox chk-align" id="chSwag">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkSwagger"> <span
-                                            class="chk-label-margin">Swagger</span>
+                                        <input type="checkbox" class="flat-red" id="chkSwagger"> <span class="chk-label-margin">Swagger</span>
                                     </label>
                                 </div>
                                 <div class="checkbox chk-align" id="chTest">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkTestCases"> <span
-                                            class="chk-label-margin">Test Cases</span>
+                                        <input type="checkbox" class="flat-red" id="chkTestCases"> <span class="chk-label-margin">Test Cases</span>
                                     </label>
                                 </div>
                                 <div class="checkbox chk-align" id="chDataTable">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkDataTable"> <span
-                                            class="chk-label-margin">Datatables</span>
+                                        <input type="checkbox" class="flat-red" id="chkDataTable"> <span class="chk-label-margin">Datatables</span>
                                     </label>
                                 </div>
                                 <div class="checkbox chk-align" id="chMigration">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkMigration"> <span
-                                            class="chk-label-margin">Migration</span>
+                                        <input type="checkbox" class="flat-red" id="chkMigration"> <span class="chk-label-margin">Migration</span>
                                     </label>
                                 </div>
                                 <div class="checkbox chk-align" id="chForceMigrate">
                                     <label>
-                                        <input type="checkbox" class="flat-red" id="chkForceMigrate"> <span
-                                            class="chk-label-margin">Force Migrate</span>
+                                        <input type="checkbox" class="flat-red" id="chkForceMigrate"> <span class="chk-label-margin">Force Migrate</span>
                                     </label>
                                 </div>
                             </div>
@@ -155,16 +248,19 @@
 
                         <div class="form-inline col-md-12" style="padding-top: 10px">
                             <div class="form-group chk-align" style="border-color: transparent;">
-                                <button type="button" class="btn btn-success btn-flat btn-green" id="btnAdd"> Add Field
+                                <button type="button" class="btn btn-success btn-flat btn-green" id="btnAdd"> Add
+                                    Field
                                 </button>
                             </div>
                             <div class="form-group chk-align" style="border-color: transparent;">
-                                <button type="button" class="btn btn-success btn-flat btn-green" id="btnPrimary"> Add
+                                <button type="button" class="btn btn-success btn-flat btn-green" id="btnPrimary">
+                                    Add
                                     Primary
                                 </button>
                             </div>
                             <div class="form-group chk-align" style="border-color: transparent;">
-                                <button type="button" class="btn btn-success btn-flat btn-green" id="btnTimeStamps"> Add
+                                <button type="button" class="btn btn-success btn-flat btn-green" id="btnTimeStamps">
+                                    Add
                                     Timestamps
                                 </button>
                             </div>
@@ -197,26 +293,22 @@
 
                         <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                             <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                <button type="submit" class="btn btn-flat btn-primary btn-blue"
-                                    id="btnGenerate">Generate
+                                <button type="submit" class="btn btn-flat btn-primary btn-blue" id="btnGenerate">Generate
                                 </button>
                             </div>
                             <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                <button type="button" class="btn btn-default btn-flat" id="btnReset" data-toggle="modal"
-                                    data-target="#confirm-delete"> Reset
+                                <button type="button" class="btn btn-default btn-flat" id="btnReset" data-toggle="modal" data-target="#confirm-delete"> Reset
                                 </button>
                             </div>
                         </div>
 
 
-                        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
-                            aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
 
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">&times;</button>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         <h4 class="modal-title" id="myModalLabel">Confirm Reset</h4>
                                     </div>
 
@@ -230,8 +322,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">No
                                         </button>
-                                        <a id="btnModelReset" class="btn btn-flat btn-danger btn-ok"
-                                            data-dismiss="modal">Yes</a>
+                                        <a id="btnModelReset" class="btn btn-flat btn-danger btn-ok" data-dismiss="modal">Yes</a>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +334,7 @@
             </div>
         </section>
     </div>
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-12">
         <section class="content">
             <div id="rollbackInfo" style="display: none"></div>
             <div class="box box-primary col-lg-12">
@@ -256,8 +347,7 @@
 
                         <div class="form-group col-md-4">
                             <label for="txtRBModelName">Model Name<span class="required">*</span></label>
-                            <input type="text" class="form-control" required id="txtRBModelName"
-                                placeholder="Enter name">
+                            <input type="text" class="form-control" required id="txtRBModelName" placeholder="Enter name">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="drdRBCommandType">Command Type</label>
@@ -273,8 +363,7 @@
                         </div>
                         <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                             <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                <button type="submit" class="btn btn-flat btn-primary btn-blue"
-                                    id="btnRollback">Rollback
+                                <button type="submit" class="btn btn-flat btn-primary btn-blue" id="btnRollback">Rollback
                                 </button>
                             </div>
                         </div>
@@ -283,7 +372,7 @@
             </div>
         </section>
     </div>
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-12">
         <section class="content">
             <div id="schemaInfo" style="display: none"></div>
             <div class="box box-primary col-lg-12">
@@ -295,8 +384,7 @@
                         <input type="hidden" name="_token" id="smToken" value="{!! csrf_token() !!}" />
                         <div class="form-group col-md-4">
                             <label for="txtSmModelName">Model Name<span class="required">*</span></label>
-                            <input type="text" name="modelName" class="form-control" id="txtSmModelName"
-                                placeholder="Enter Model Name">
+                            <input type="text" name="modelName" class="form-control" id="txtSmModelName" placeholder="Enter Model Name">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="schemaFile">Schema File<span class="required">*</span></label>
@@ -304,8 +392,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="drdSmCommandType">Command Type</label>
-                            <select name="commandType" id="drdSmCommandType" class="form-control"
-                                style="width: 100%">
+                            <select name="commandType" id="drdSmCommandType" class="form-control" style="width: 100%">
                                 <option value="laravel-russian:api_scaffold">API Scaffold Generator</option>
                                 <option value="laravel-russian:api">API Generator</option>
                                 <option value="laravel-russian:scaffold">Scaffold Generator</option>
@@ -313,8 +400,7 @@
                         </div>
                         <div class="form-inline col-md-12" style="padding:15px 15px;text-align: right">
                             <div class="form-group" style="border-color: transparent;padding-left: 10px">
-                                <button type="submit" class="btn btn-flat btn-primary btn-blue"
-                                    id="btnSmGenerate">Generate
+                                <button type="submit" class="btn btn-flat btn-primary btn-blue" id="btnSmGenerate">Generate
                                 </button>
                             </div>
                         </div>
