@@ -46,7 +46,11 @@
                     <div class="col-md-3">
                         <h3>Tables</h3>
                         <ul>
-                            {{ $dbs = DB::connection()->getDoctrineSchemaManager()->listTableNames() }}
+                            @php
+                                $dbs = DB::connection()
+                                    ->getDoctrineSchemaManager()
+                                    ->listTableNames();
+                            @endphp
                             @foreach ($dbs as $db)
                                 <li>{{ $db }}</li>
                             @endforeach
