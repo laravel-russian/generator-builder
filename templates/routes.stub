@@ -1,9 +1,6 @@
-Route::get('generator_builder', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
-Route::get('field_template', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
-Route::get('relation_field_template', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
-Route::post('generator_builder/generate', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
-Route::post('generator_builder/rollback', '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
-Route::post(
-    'generator_builder/generate-from-file',
-    '\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
-)->name('io_generator_builder_generate_from_file');
+Route::get('generator_builder', [\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController::class, 'builder'])->name('io_generator_builder');
+Route::get('field_template', [\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController::class, 'fieldTemplate'])->name('io_field_template');
+Route::get('relation_field_template', [\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController::class, 'relationFieldTemplate'])->name('io_relation_field_template');
+Route::post('generator_builder/generate', [\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController::class, 'generate'])->name('io_generator_builder_generate');
+Route::post('generator_builder/rollback', [\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController::class, 'rollback'])->name('io_generator_builder_rollback');
+Route::post('generator_builder/generate-from-file', [\LaravelRussian\GeneratorBuilder\Controllers\GeneratorBuilderController::class, 'generateFromFile'])->name('io_generator_builder_generate_from_file');
